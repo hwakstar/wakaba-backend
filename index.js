@@ -6,6 +6,8 @@ const path = require('path');
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
 const productRoutes= require('./routes/productRoutes');
+const customerRoutes= require('./routes/customerRoutes');
+
 const app = express();
 app.use(bodyParser.json());
 // Serve static files from 'uploads' directory
@@ -14,6 +16,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/products', productRoutes);
+app.use('/api/customers', customerRoutes);
 
 // app.use('/api/admin', adminRoutes);
 
